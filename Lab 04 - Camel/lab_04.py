@@ -36,29 +36,29 @@ def main():
         print()
 
         # Take user's input
-        userInput = input("What will you do?")
+        user_input = input("What will you do?")
 
         # If player quits
-        if userInput.upper() == "Q":
+        if user_input.upper() == "Q":
             done = True
             print("You Quit")
 
         # Status check
-        elif userInput.upper() == "E":
+        elif user_input.upper() == "E":
             print("Miles traveled:", miles_traveled)
             print("Drinks in canteen:", canteen)
             print("The natives are", miles_traveled - natives_traveled, "miles behind you.")
             print()
 
         # Stop for the night
-        elif userInput.upper() == "D":
+        elif user_input.upper() == "D":
             print("You stop for the night.")
             print("Your camel is happy.")
             print("The natives don't stop.")
             print()
 
         # Full speed ahead
-        elif userInput.upper() == "C":
+        elif user_input.upper() == "C":
             miles = random.randrange(12, 18)
             miles_traveled += miles
             thirst += 20
@@ -81,7 +81,7 @@ def main():
                 print()
 
         # Mid speed ahead
-        elif userInput.upper() == "B":
+        elif user_input.upper() == "B":
             miles = random.randrange(5, 12)
             miles_traveled += miles
             thirst += 10
@@ -104,7 +104,7 @@ def main():
                 print()
 
         # Drink from canteen
-        elif userInput.upper() == "A":
+        elif user_input.upper() == "A":
             if canteen > 0 :
                 canteen -= 1
                 thirst = 0
@@ -113,39 +113,39 @@ def main():
                 print("Your canteen is empty.")
 
         # Thirst
-        if thirst > 100 :
+        if thirst > 100:
             print("You died of thirst")
             print("Game Over.")
             print()
             done = True
-        elif thirst > 50 :
+        elif thirst > 50:
             print("You are thirsty!")
 
         # Distance traveled
-        if miles_traveled >= 25 :
+        if miles_traveled >= 25:
             print("Congratulations! You have reached safety!")
             print("You win!")
             print()
             done = True
         # Camels health
-        if camel_health > 35 :
+        if camel_health > 35:
             print("Your camel died of exhaustion!")
             print("The natives caught up to you and kill you!")
             print("Game over.")
             print()
             done = True
-        elif camel_health > 20 :
+        elif camel_health > 20:
             print("Your camel is tired.")
             print()
 
         # Natives distance
-        if miles_traveled - natives_traveled <= 0 :
+        if miles_traveled - natives_traveled <= 0:
             print("The natives have caught up to you!")
             print("They kill both you and your camel")
             print("Game Over.")
             print()
             done = True
-        elif miles_traveled - natives_traveled < 15 :
+        elif miles_traveled - natives_traveled < 15:
             print("Go faster! The natives are catching up!")
             print()
 
