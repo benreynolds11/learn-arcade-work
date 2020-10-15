@@ -117,7 +117,6 @@ class MyGame(arcade.Window):
             # Add the coin to the lists
             self.coin_list.append(coin)
 
-
         # Create the wheels
         for i in range(WHEEL_COUNT):
 
@@ -141,7 +140,6 @@ class MyGame(arcade.Window):
         self.wheel_list.draw()
         self.player_list.draw()
 
-
         # Put the text on the screen.
         output = f"Score: {self.score}"
         arcade.draw_text(output, 10, 20, arcade.color.WHITE, 14)
@@ -150,9 +148,6 @@ class MyGame(arcade.Window):
             arcade.draw_text("GAME OVER!", 100, 200, arcade.color.WHITE, 100)
 
     def on_mouse_motion(self, x, y, dx, dy):
-        """ Handle Mouse Motion """
-
-
 
         if len(self.coin_list) > 0:
             self.player_sprite.center_x = x
@@ -171,7 +166,6 @@ class MyGame(arcade.Window):
         hit_list = arcade.check_for_collision_with_list(self.player_sprite, self.coin_list)
         hit_list = arcade.check_for_collision_with_list(self.player_sprite, self.wheel_list)
 
-
         # Loop through each colliding sprite, remove it, and add to the score.
         hit_list = arcade.check_for_collision_with_list(self.player_sprite, self.coin_list)
         for coin in hit_list:
@@ -182,8 +176,6 @@ class MyGame(arcade.Window):
         for wheel in hit_list:
             wheel.remove_from_sprite_lists()
             self.score -= 1
-
-
 
 
 def main():
