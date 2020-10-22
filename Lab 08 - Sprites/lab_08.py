@@ -128,7 +128,8 @@ class MyGame(arcade.Window):
             wheel.center_x = random.randrange(SCREEN_WIDTH)
             wheel.center_y = random.randrange(SCREEN_HEIGHT)
             wheel.change_x = random.randrange(-3, 4)
-            wheel.change_y = random.randrange(-3, 4)
+            wheel.change_y = +\
+                random.randrange(-3, 4)
 
             # Add the wheel to the lists
             self.wheel_list.append(wheel)
