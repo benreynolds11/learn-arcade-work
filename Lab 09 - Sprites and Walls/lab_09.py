@@ -194,7 +194,6 @@ class MyGame(arcade.Window):
         """
         Render the screen.
         """
-
         # This command has to happen before we start drawing
         arcade.start_render()
 
@@ -204,7 +203,7 @@ class MyGame(arcade.Window):
         self.coin_list.draw()
 
         output = f"Score: {self.score}"
-        arcade.draw_text(output, -500, 500, arcade.color.WHITE, 36)
+        arcade.draw_text(output, 500, 500, arcade.color.BLACK, 36)
 
         if len(self.coin_list) == 0:
             output = f"Game over."

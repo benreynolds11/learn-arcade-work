@@ -1,13 +1,14 @@
 import re
 
-def main():
 
+def main():
     # This function takes in a line of text and returns
     # a list of words in the line.
-    def split_line(line):
-        return re.findall('[A-Za-z]+(?:\'[A-Za-z]+)?',line)
+    def split_line():
+        return re.findall('[A-Za-z]+(?:\'[A-Za-z]+)?', line)
 
     my_file = open("dictionary.txt")
+
     dictionary_list = []
     for line in my_file:
         line = line.strip()
@@ -20,13 +21,13 @@ def main():
     line_number = 0
     for line in story:
         line_number += 1
-        word_list = split_line(line)
+        word_list = split_line()
         for word in word_list:
             i = 0
-            while i < len(dictionary_list) and word.upper() != dictionary_list[i]:
-                i += 0
+            while i < len(dictionary_list) and dictionary_list[i] != word.upper():
+                i += 1
                 if i == len(dictionary_list):
-                    print("Line", line_number, "Word:", word)
+                    print("Line", str(line_number), "Word:", word)
     story.close()
 
     print("--- Binary Search ---")
@@ -35,7 +36,7 @@ def main():
     line_number = 0
     for line in story:
         line_number += 1
-        word_list = split_line(line)
+        word_list = split_line()
         for word in word_list:
             upper_bound = len(dictionary_list) - 1
             lower_bound = 0
@@ -49,13 +50,8 @@ def main():
                 else:
                     found = True
             if not found:
-                print("Line", line_number, "Word:", word)
-        story.close()
+                print("Line", str(line_number), "Word:", word)
+    story.close()
 
 
 main()
-
-
-
-
-
