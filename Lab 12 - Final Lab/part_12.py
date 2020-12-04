@@ -187,7 +187,7 @@ def main():
         user_input = input("What's your command master?")
         command_words = user_input.split(" ")
 
-        if command_words[0].upper() == "North" or command_words[0].upper() == "N":
+        if command_words[0].upper() == "NORTH" or command_words[0].upper() == "N":
             next_room = room_list[current_room].north
             if next_room is None:
                 print("You can't go that way.")
@@ -195,7 +195,7 @@ def main():
             else:
                 current_room = next_room
 
-        elif command_words[0].upper() == "South" or command_words[0].upper() == "S":
+        elif command_words[0].upper() == "SOUTH" or command_words[0].upper() == "S":
             next_room = room_list[current_room].south
             print()
             if next_room is None:
@@ -204,7 +204,7 @@ def main():
             else:
                 current_room = next_room
 
-        elif command_words[0].upper() == "East" or command_words[0].upper() == "E":
+        elif command_words[0].upper() == "EAST" or command_words[0].upper() == "E":
             next_room = room_list[current_room].east
             print()
             if next_room is None:
@@ -213,7 +213,7 @@ def main():
             else:
                 current_room = next_room
 
-        elif command_words[0].upper() == "West" or command_words[0].upper() == "W":
+        elif command_words[0].upper() == "WEST" or command_words[0].upper() == "W":
             next_room = room_list[current_room].west
             print()
             if next_room is None:
@@ -222,7 +222,7 @@ def main():
             else:
                 current_room = next_room
 
-        elif command_words[0].upper() == "Northeast" or command_words[0].upper() == "NE":
+        elif command_words[0].upper() == "NORTHEAST" or command_words[0].upper() == "NE":
             next_room = room_list[current_room].northeast
             print()
             if next_room is None:
@@ -231,7 +231,7 @@ def main():
             else:
                 current_room = next_room
 
-        elif command_words[0].upper() == "Southeast" or command_words[0].upper() == "SE":
+        elif command_words[0].upper() == "SOUTHEAST" or command_words[0].upper() == "SE":
             next_room = room_list[current_room].southeast
             print()
             if next_room is None:
@@ -240,7 +240,7 @@ def main():
             else:
                 current_room = next_room
 
-        elif command_words[0].upper() == "Southwest" or command_words[0].upper() == "SW":
+        elif command_words[0].upper() == "SOUTHWEST" or command_words[0].upper() == "SW":
             next_room = room_list[current_room].southwest
             print()
             if next_room is None:
@@ -249,7 +249,7 @@ def main():
             else:
                 current_room = next_room
 
-        elif command_words[0].upper() == "Northwest" or command_words[0].upper() == "NW":
+        elif command_words[0].upper() == "NORTHWEST" or command_words[0].upper() == "NW":
             next_room = room_list[current_room].northwest
             print()
             if next_room is None:
@@ -258,7 +258,7 @@ def main():
             else:
                 current_room = next_room
 
-        elif command_words[0].upper() == "Up" or command_words[0].upper() == "U":
+        elif command_words[0].upper() == "UP" or command_words[0].upper() == "U":
             next_room = room_list[current_room].up
             print()
             if next_room is None:
@@ -267,7 +267,7 @@ def main():
             else:
                 current_room = next_room
 
-        elif command_words[0].upper() == "Down" or command_words[0].upper() == "D":
+        elif command_words[0].upper() == "DOWN" or command_words[0].upper() == "D":
             next_room = room_list[current_room].down
             print()
             if next_room is None:
@@ -346,7 +346,7 @@ def main():
                 print()
                 print("You don't have a glass of water in your hand.")
 
-        elif command_words[0].upper() == "Use" or command_words[0].upper() == "U":
+        elif command_words[0].upper() == "USE" or command_words[0].upper() == "U":
             item_use = False
             for item in item_list:
                 if item.room == -1 and item.name == "remote":
