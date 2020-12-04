@@ -1,5 +1,5 @@
 """
-My house
+My Dream house
 """
 
 
@@ -65,7 +65,7 @@ def main():
     item = Item(7, "You see a delicious apple on the counter. Pick it up and save it for later if you want.", "apple")
     item_list.append(item)
 
-    item = Item(9, "You see a basketball laying on the ground." 
+    item = Item(9, "You see a basketball laying on the ground. " 
                    "Pick it up if you would like", "basketball")
     item_list.append(item)
 
@@ -105,7 +105,7 @@ def main():
     room_list.append(room)
 
     # Description for room 5
-    room = Room("You now enter what looks to be a kids bedroom. "
+    room = Room("You now enter what looks to be a kid bedroom. "
                 "There are doors to your north and east.", 0, 6, None, None, None, None, None, None, None, None)
     room_list.append(room)
 
@@ -121,7 +121,7 @@ def main():
     room_list.append(room)
 
     # Description for room 8
-    room = Room("You now enter a super cool man cave. There are doors to your east and west. "
+    room = Room("You now enter a super-cool man cave. There are doors to your east and west. "
                 "You can also go northwest.", None, 9, None, 7, None, None, None, 2, None, None)
     room_list.append(room)
 
@@ -187,7 +187,7 @@ def main():
 
         # Get command from user
         print()
-        user_input = input("What's your command master?")
+        user_input = input("What's your command master? ")
         command_words = user_input.split(" ")
 
         # North command
