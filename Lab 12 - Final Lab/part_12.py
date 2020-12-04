@@ -42,15 +42,15 @@ def main():
     person_list = []
 
     # Create the people
-    messi = Person(15, "Lionel Messi is standing in front of you. He want's you to shoot with him."
+    messi = Person(15, "Lionel Messi is standing in front of you. He want's you to shoot with him. "
                        "You can go shoot with him or go to a different room.", "messi")
     person_list.append(messi)
 
-    jordan = Person(9, "Michael Jordan is standing under the basketball hoop. He want's to shoot hoops with him."
+    jordan = Person(9, "Michael Jordan is standing under the basketball hoop. He want's to shoot hoops with him. "
                        "You can go shoot with him or go to a different room.", "jordan")
     person_list.append(jordan)
 
-    bartender = Person(4, "There is a bartender standing behind the bar."
+    bartender = Person(4, "There is a bartender standing behind the bar. "
                           "He says they are only serving water at this time.", "bartender")
     person_list.append(bartender)
 
@@ -313,28 +313,35 @@ def main():
         elif command_words[0].upper() == "SHOOT" or command_words[0].upper() == "SH":
             item_use = False
             for item in item_list:
-                if item.room == -1 and item.name == "basketball":
+                if item.room == -1 and command_words[1].lower() == "basketball" and item.name == "basketball" \
+                        or item.name == "ball":
                     print()
-                    print("You shoot the basketball.")
+                    print("You shoot the ball.")
                     item_use = True
                     # Allow user to shoot with person
                     for person in person_list:
                         if person.room == current_room:
                             print()
-                            print("You have successfully just shot with one of the greatest players of all time."
+                            print("You have successfully just shot with one of the greatest players of all time. "
                                   "He will now disappear.")
                             person.room = -1
             if not item_use:
                 print()
-                print("You don't have a basketball in your hand.")
+                print("You don't have a ball in your hand.")
 
-        elif command_words[0].upper() == "Drink" or command_words[0].upper() == "D":
+        elif command_words[0].upper() == "DRINK" or command_words[0].upper() == "D":
             item_use = False
             for item in item_list:
                 if item.room == -1 and item.name == "water":
                     print()
                     print("You drink the water.")
                     item_use = True
+                    for person in person_list:
+                        if person.room == current_room:
+                            print()
+                            print("You just drank some of the best water this bartender has ever had to offer. "
+                                  "He now has to leave and go resupply with water.")
+                            person.room = -1
             if not item_use:
                 print()
                 print("You don't have a glass of water in your hand.")
