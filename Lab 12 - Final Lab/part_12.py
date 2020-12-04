@@ -54,8 +54,10 @@ def main():
                           "He says they are only serving water at this time.", "bartender")
     person_list.append(bartender)
 
+    # Create the item list
     item_list = []
 
+    # Create the items
     item = Item(2, "You are bored and want to watch T.V. You see a remote on the table next to you. Pick it up if you "
                    "would like.", "remote")
     item_list.append(item)
@@ -73,6 +75,7 @@ def main():
     item = Item(4, "You see a glass of water sitting on the bar. Go pick it up and take a drink if you want.", "water")
     item_list.append(item)
 
+    # Create the room list
     room_list = []
 
     # Description for room 0
@@ -187,6 +190,7 @@ def main():
         user_input = input("What's your command master?")
         command_words = user_input.split(" ")
 
+        # North command
         if command_words[0].upper() == "NORTH" or command_words[0].upper() == "N":
             next_room = room_list[current_room].north
             if next_room is None:
@@ -195,6 +199,7 @@ def main():
             else:
                 current_room = next_room
 
+        # South command
         elif command_words[0].upper() == "SOUTH" or command_words[0].upper() == "S":
             next_room = room_list[current_room].south
             print()
@@ -204,6 +209,7 @@ def main():
             else:
                 current_room = next_room
 
+        # East Command
         elif command_words[0].upper() == "EAST" or command_words[0].upper() == "E":
             next_room = room_list[current_room].east
             print()
@@ -213,6 +219,7 @@ def main():
             else:
                 current_room = next_room
 
+        # West command
         elif command_words[0].upper() == "WEST" or command_words[0].upper() == "W":
             next_room = room_list[current_room].west
             print()
@@ -222,6 +229,7 @@ def main():
             else:
                 current_room = next_room
 
+        # Northeast command
         elif command_words[0].upper() == "NORTHEAST" or command_words[0].upper() == "NE":
             next_room = room_list[current_room].northeast
             print()
@@ -231,6 +239,7 @@ def main():
             else:
                 current_room = next_room
 
+        # Southeast command
         elif command_words[0].upper() == "SOUTHEAST" or command_words[0].upper() == "SE":
             next_room = room_list[current_room].southeast
             print()
@@ -240,6 +249,7 @@ def main():
             else:
                 current_room = next_room
 
+        # Southwest command
         elif command_words[0].upper() == "SOUTHWEST" or command_words[0].upper() == "SW":
             next_room = room_list[current_room].southwest
             print()
@@ -249,6 +259,7 @@ def main():
             else:
                 current_room = next_room
 
+        # Northwest command
         elif command_words[0].upper() == "NORTHWEST" or command_words[0].upper() == "NW":
             next_room = room_list[current_room].northwest
             print()
@@ -258,6 +269,7 @@ def main():
             else:
                 current_room = next_room
 
+        # Up command
         elif command_words[0].upper() == "UP" or command_words[0].upper() == "U":
             next_room = room_list[current_room].up
             print()
@@ -267,6 +279,7 @@ def main():
             else:
                 current_room = next_room
 
+        # Down command
         elif command_words[0].upper() == "DOWN" or command_words[0].upper() == "D":
             next_room = room_list[current_room].down
             print()
@@ -276,6 +289,7 @@ def main():
             else:
                 current_room = next_room
 
+        # Allow user to quit
         elif command_words[0].upper() == "QUIT" or command_words[0].upper() == "Q":
             done = True
             print("You have quit.")
@@ -293,6 +307,7 @@ def main():
                 print()
                 print("The item your requesting isn't here.")
 
+        # Be able to release objects
         elif command_words[0].upper() == "RELEASE" or command_words[0].upper() == "R":
             get_item = False
             for item in item_list:
@@ -305,11 +320,13 @@ def main():
                 print()
                 print("You currently don't have this item.")
 
+        # Allow user to check inventory
         elif command_words[0].upper() == "INVENTORY" or command_words[0].upper() == "I":
             for item in item_list:
                 if item.room == -1:
                     print(item.name)
 
+        # Allow user to shoot
         elif command_words[0].upper() == "SHOOT" or command_words[0].upper() == "SH":
             item_use = False
             for item in item_list:
@@ -329,6 +346,7 @@ def main():
                 print()
                 print("You don't have a ball in your hand.")
 
+        # Allow user to drink
         elif command_words[0].upper() == "DRINK" or command_words[0].upper() == "D":
             item_use = False
             for item in item_list:
@@ -346,6 +364,7 @@ def main():
                 print()
                 print("You don't have a glass of water in your hand.")
 
+        # Allow user to use an object
         elif command_words[0].upper() == "USE" or command_words[0].upper() == "U":
             item_use = False
             for item in item_list:
